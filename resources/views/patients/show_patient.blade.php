@@ -3,6 +3,9 @@
     <!--- Internal Select2 css-->
     <link href="{{URL::asset('assets/plugins/select2/css/select2.min.css')}}" rel="stylesheet">
 @endsection
+@section('title')
+    معلومات المريض
+@stop
 @section('page-header')
     <!-- breadcrumb -->
     <div class="breadcrumb-header justify-content-between">

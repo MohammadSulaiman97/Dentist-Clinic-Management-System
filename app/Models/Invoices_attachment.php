@@ -9,5 +9,10 @@ class Invoices_attachment extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = [
+        'file_name',
+        'patient_name',
+        'Created_by',
+        'invoice_id'
+    ];
 }

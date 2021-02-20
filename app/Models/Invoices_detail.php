@@ -15,7 +15,6 @@ class Invoices_detail extends Model
         'Status',
         'Value_Status',
         'note',
-        'patient',
         'Payment_Date',
     ];
 }

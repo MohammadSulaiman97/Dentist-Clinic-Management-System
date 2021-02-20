@@ -16,6 +16,7 @@ class CreateInvoicesAttachmentsTable extends Migration
         Schema::create('invoices_attachments', function (Blueprint $table) {
             $table->id();
             $table->string('file_name', 999);
+            $table->string('patient_name', 50);
             $table->string('Created_by', 999);
             $table->unsignedBigInteger('invoice_id')->nullable();
             $table->foreign('invoice_id')->references('id')->on('invoices')->onDelete('cascade');

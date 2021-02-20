@@ -149,7 +149,7 @@ class PatientController extends Controller
 
     public function export()
     {
-        return Excel::download(new PatientsExport, 'Patients.xlsx');
+        return Excel::download(new PatientsExport, 'Patient.xlsx');
     }
     
 }
