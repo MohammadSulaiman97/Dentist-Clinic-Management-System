@@ -13,7 +13,6 @@ class PatientsExport implements FromCollection,WithHeadings
     */
     public function collection()
     {
-        // return invoices::all();
         return Patient::select('name','dob','mobile','address','career','gender','social_status','note')->get();
     }
 
