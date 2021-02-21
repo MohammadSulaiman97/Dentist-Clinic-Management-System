@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\DentistAppointmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +36,7 @@ Route::resource('invoices', InvoiceController::class);
 
 Route::resource('InvoiceAttachments', InvoicesAttachmentController::class);
 
-
+Route::resource('DentistAppointments', DentistAppointmentController::class);
 
 
 /* ...................................InvoiceController............................................... */
@@ -80,10 +81,14 @@ Route::get('edit_patient/{patient}', [PatientController::class, 'edit'])->name('
 Route::get('export_patients', [PatientController::class,'export'])->name('export_patients');
 
 
+/* .......................................report ........................................... */
+Route::get('invoices_report', 'App\Http\Controllers\Invoices_Report@index');
 
+Route::post('Search_invoices', 'App\Http\Controllers\Invoices_Report@Search_invoices');
 
+Route::get('patients_report', 'App\Http\Controllers\Patients_Report@index')->name("patients_report");
 
-
+Route::post('Search_patients', 'App\Http\Controllers\Patients_Report@Search_patients');
 
 
 

@@ -90,9 +90,9 @@
                                 <select name="Value_Status" class="form-control SlectBox">
                                     <!--placeholder-->
                                     <option value="" selected disabled>حدد حالة الدفع</option>
-                                        <option value="1"> مدفوع </option>
-                                        <option value="2">غير مدفوع </option>
-                                        <option value="3">مدفوعة جزئيا</option>
+                                    <option value="مدفوعة">الفواتير المدفوعة</option>
+                                    <option value="غير مدفوع">الفواتير الغير مدفوعة</option>
+                                    <option value="مدفوعة جزئيا">الفواتير المدفوعة جزئيا</option>
 
                                 </select>
                             </div>

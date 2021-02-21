@@ -56,7 +56,7 @@
 
 										<li><a class="slide-item" href="{{ url('/' . $page='invoices_report') }}">تقارير الفواتير</a></li>
 
-										<li><a class="slide-item" href="{{ url('/' . $page='customers_report') }}">تقارير العملاء</a></li>
+										<li><a class="slide-item" href="{{ url('/' . $page='patients_report') }}">تقارير المرضى</a></li>
 
 								</ul>
 							</li>
@@ -69,7 +69,7 @@
 
 										<li><a class="slide-item" href="{{ url('/' . $page='patient') }}">قائمة المرضى</a></li>
 
-										<li><a class="slide-item" href="{{ url('/' . $page='roles') }}">قائمة المواعيد</a></li>
+										<li><a class="slide-item" href="{{ url('/' . $page='DentistAppointments') }}">قائمة المواعيد</a></li>
 
 								</ul>
 							</li>

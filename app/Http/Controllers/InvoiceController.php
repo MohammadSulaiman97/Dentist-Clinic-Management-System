@@ -51,15 +51,15 @@ class InvoiceController extends Controller
         $data['patient_id'] = $request->patient_id;
         $data['Total'] = $request->Total;
         $data['note'] = $request->note;
-        if ($request->Value_Status == 1){
-            $data['Status'] = "مدفوع";
+        if ($request->Value_Status == 'مدفوعة'){
+            $data['Status'] = "مدفوعة";
             $data['Value_Status'] = 1;
             $data['Payment_Date'] = Carbon::now()->toDateTimeString();
-        }elseif($request->Value_Status == 2){
+        }elseif($request->Value_Status == 'غير مدفوع'){
             $data['Status'] = "غير مدفوع";
             $data['Value_Status'] = 2;
         }else{
-            $data['Status'] = "مدفوع جزئي";
+            $data['Status'] = "مدفوعة جزئيا";
             $data['Value_Status'] = 3;
             $data['Payment_Date'] = Carbon::now()->toDateTimeString();
         }
@@ -72,15 +72,15 @@ class InvoiceController extends Controller
 
         $data['id_Invoice'] = $invoice_id;
         $data['type_treatment'] = $request->type_treatment;
-        if ($request->Value_Status == 1){
-            $data['Status'] = "مدفوع";
+        if ($request->Value_Status == 'مدفوعة'){
+            $data['Status'] = "مدفوعة";
             $data['Value_Status'] = 1;
             $data['Payment_Date'] = Carbon::now()->toDateTimeString();
-        }elseif($request->Value_Status == 2){
+        }elseif($request->Value_Status == 'غير مدفوع'){
             $data['Status'] = "غير مدفوع";
             $data['Value_Status'] = 2;
         }else{
-            $data['Status'] = "مدفوع جزئي";
+            $data['Status'] = "مدفوعة جزئيا";
             $data['Value_Status'] = 3;
             $data['Payment_Date'] = Carbon::now()->toDateTimeString();
         }
