@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Exports\PatientsExport;
 use App\Models\Invoice;
+use App\Models\Invoices_attachment;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -83,7 +84,10 @@ class PatientController extends Controller
         $patients = Patient::where('id',$patient)->first();
         $patient_id = Invoice::where('patient_id',$patient)->get();
 
-        return view('patients.show_patient',compact('patients','patient_id'));
+        $attachments = Invoices_attachment::where('patient_name',$patients->name)->get();
+
+
+        return view('patients.show_patient',compact('patients','patient_id','attachments'));
     }
 
     /**

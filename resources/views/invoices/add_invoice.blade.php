@@ -89,7 +89,7 @@
                                 <label for="inputName" class="control-label">الحالة</label>
                                 <select name="Value_Status" class="form-control SlectBox">
                                     <!--placeholder-->
-                                    <option value="" selected disabled>حدد الحالة المريض</option>
+                                    <option value="" selected disabled>حدد حالة الدفع</option>
                                         <option value="1"> مدفوع </option>
                                         <option value="2">غير مدفوع </option>
                                         <option value="3">مدفوعة جزئيا</option>

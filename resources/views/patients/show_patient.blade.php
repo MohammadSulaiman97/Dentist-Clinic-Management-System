@@ -95,38 +95,57 @@
                                 </table>
                             </div>
                         </section>
-                        <h3>Payment Details</h3>
+                        <h3>المرفقات</h3>
                         <section>
-                            <div class="form-group">
-                                <label class="form-label" >CardHolder Name</label>
-                                <input type="text" class="form-control" id="name1" placeholder="First Name">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Card number</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search for...">
-                                    <span class="input-group-append">
-													<button class="btn btn-info" type="button"><i class="fab fa-cc-visa"></i> &nbsp; <i class="fab fa-cc-amex"></i> &nbsp;
-													<i class="fab fa-cc-mastercard"></i></button>
-												</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-8">
-                                    <div class="form-group mb-sm-0">
-                                        <label class="form-label">Expiration</label>
-                                        <div class="input-group">
-                                            <input type="number" class="form-control" placeholder="MM" name="expiremonth">
-                                            <input type="number" class="form-control" placeholder="YY" name="expireyear">
-                                        </div>
+                            <div class="tab-pane" id="tab6">
+                                <!--المرفقات-->
+                                <div class="card card-statistics">
+
+                                    <div class="table-responsive mt-15">
+                                        <table class="table center-aligned-table mb-0 table table-hover"
+                                               style="text-align:center">
+                                            <thead>
+                                            <tr class="text-dark">
+                                                <th scope="col">م</th>
+                                                <th scope="col">اسم الملف</th>
+                                                <th scope="col">قام بالاضافة</th>
+                                                <th scope="col">تاريخ الاضافة</th>
+                                                <th scope="col">العمليات</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <?php $i = 0; ?>
+                                            @foreach ($attachments as $attachment)
+                                                <?php $i++; ?>
+                                                <tr>
+                                                    <td>{{ $i }}</td>
+                                                    <td>{{ $attachment->file_name }}</td>
+                                                    <td>{{ $attachment->Created_by }}</td>
+                                                    <td>{{ $attachment->created_at }}</td>
+                                                    <td colspan="2">
+
+                                                        <a class="btn btn-outline-success btn-sm"
+                                                           href="{{ url('View_file') }}/{{ $attachment->patient_name }}/{{ $attachment->file_name }}"
+                                                           role="button"><i class="fas fa-eye"></i>&nbsp;عرض </a>
+
+                                                        <a class="btn btn-outline-info btn-sm"
+                                                           href="{{ url('download') }}/{{ $attachment->patient_name }}/{{ $attachment->file_name }}"
+                                                           role="button"><i class="fas fa-download"></i>&nbsp;تحميل </a>
+
+                                                        <button class="btn btn-outline-danger btn-sm" data-toggle="modal"
+                                                                data-file_name="{{ $attachment->file_name }}" data-patient_name="{{ $attachment->patient_name }}"
+                                                                data-id_file="{{ $attachment->id }}" data-target="#delete_file">حذف</button>
+
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
+                                            </tbody>
+                                        </table>
+
                                     </div>
                                 </div>
-                                <div class="col-sm-4 ">
-                                    <div class="form-group mb-0">
-                                        <label class="form-label">CVV <i class="fa fa-question-circle"></i></label>
-                                        <input type="number" class="form-control" required="">
-                                    </div>
-                                </div>
+
                             </div>
                         </section>
                     </div>
