@@ -167,6 +167,8 @@ return [
          */
         Maatwebsite\Excel\ExcelServiceProvider::class,
 
+        Fx3costa\LaravelChartJs\Providers\ChartjsServiceProvider::class,
+
         /*
          * Application Service Providers...
          */

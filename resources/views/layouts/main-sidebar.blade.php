@@ -71,6 +71,8 @@
 
 										<li><a class="slide-item" href="{{ url('/' . $page='DentistAppointments') }}">قائمة المواعيد</a></li>
 
+								    	<li><a class="slide-item" href="{{ url('/' . $page='Archive') }}">قائمة المواعيد المنتهية</a></li>
+
 								</ul>
 							</li>
 

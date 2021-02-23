@@ -19,7 +19,7 @@ class CreateDentistAppointmentsTable extends Migration
             $table->string('patient_Mobile');
             $table->date('patient_Date');
             $table->time('patient_Time');
-            $table->unsignedBigInteger('patient_id');
+            $table->unsignedBigInteger('patient_id')->nullable();
             $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();

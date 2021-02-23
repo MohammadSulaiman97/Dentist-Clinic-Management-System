@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\DentistAppointmentController;
+use App\Http\Controllers\PatientAchiveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,8 @@ Route::resource('invoices', InvoiceController::class);
 Route::resource('InvoiceAttachments', InvoicesAttachmentController::class);
 
 Route::resource('DentistAppointments', DentistAppointmentController::class);
+
+Route::resource('Archive', PatientAchiveController::class);
 
 
 /* ...................................InvoiceController............................................... */

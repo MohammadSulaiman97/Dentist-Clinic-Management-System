@@ -192,49 +192,52 @@
                                                 {{--@endcan--}}
                                                 <br>
 
-                                                <div class="table-responsive mt-15">
-                                                    <table class="table center-aligned-table mb-0 table table-hover"
-                                                           style="text-align:center">
-                                                        <thead>
-                                                        <tr class="text-dark">
-                                                            <th scope="col">م</th>
-                                                            <th scope="col">اسم الملف</th>
-                                                            <th scope="col">قام بالاضافة</th>
-                                                            <th scope="col">تاريخ الاضافة</th>
-                                                            <th scope="col">العمليات</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <?php $i = 0; ?>
-                                                        @foreach ($attachments as $attachment)
-                                                            <?php $i++; ?>
-                                                            <tr>
-                                                                <td>{{ $i }}</td>
-                                                                <td>{{ $attachment->file_name }}</td>
-                                                                <td>{{ $attachment->Created_by }}</td>
-                                                                <td>{{ $attachment->created_at }}</td>
-                                                                <td colspan="2">
 
-                                                                    <a class="btn btn-outline-success btn-sm"
-                                                                       href="{{ url('View_file') }}/{{ $attachment->patient_name }}/{{ $attachment->file_name }}"
-                                                                       role="button"><i class="fas fa-eye"></i>&nbsp;عرض </a>
-
-                                                                    <a class="btn btn-outline-info btn-sm"
-                                                                       href="{{ url('download') }}/{{ $attachment->patient_name }}/{{ $attachment->file_name }}"
-                                                                       role="button"><i class="fas fa-download"></i>&nbsp;تحميل </a>
-
-                                                                    <button class="btn btn-outline-danger btn-sm" data-toggle="modal"
-                                                                            data-file_name="{{ $attachment->file_name }}" data-patient_name="{{ $attachment->patient_name }}"
-                                                                            data-id_file="{{ $attachment->id }}" data-target="#delete_file">حذف</button>
-
-                                                                </td>
+                                                @if($attachments->count() != 0)
+                                                    <div class="table-responsive mt-15">
+                                                        <table class="table center-aligned-table mb-0 table table-hover"
+                                                               style="text-align:center">
+                                                            <thead>
+                                                            <tr class="text-dark">
+                                                                <th scope="col">م</th>
+                                                                <th scope="col">اسم الملف</th>
+                                                                <th scope="col">قام بالاضافة</th>
+                                                                <th scope="col">تاريخ الاضافة</th>
+                                                                <th scope="col">العمليات</th>
                                                             </tr>
-                                                        @endforeach
-                                                        </tbody>
-                                                        </tbody>
-                                                    </table>
+                                                            </thead>
+                                                            <tbody>
+                                                            <?php $i = 0; ?>
+                                                            @foreach ($attachments as $attachment)
+                                                                <?php $i++; ?>
+                                                                <tr>
+                                                                    <td>{{ $i }}</td>
+                                                                    <td>{{ $attachment->file_name }}</td>
+                                                                    <td>{{ $attachment->Created_by }}</td>
+                                                                    <td>{{ $attachment->created_at }}</td>
+                                                                    <td colspan="2">
 
-                                                </div>
+                                                                        <a class="btn btn-outline-success btn-sm"
+                                                                           href="{{ url('View_file') }}/{{ $attachment->patient_name }}/{{ $attachment->file_name }}"
+                                                                           role="button"><i class="fas fa-eye"></i>&nbsp;عرض </a>
+
+                                                                        <a class="btn btn-outline-info btn-sm"
+                                                                           href="{{ url('download') }}/{{ $attachment->patient_name }}/{{ $attachment->file_name }}"
+                                                                           role="button"><i class="fas fa-download"></i>&nbsp;تحميل </a>
+
+                                                                        <button class="btn btn-outline-danger btn-sm" data-toggle="modal"
+                                                                                data-file_name="{{ $attachment->file_name }}" data-patient_name="{{ $attachment->patient_name }}"
+                                                                                data-id_file="{{ $attachment->id }}" data-target="#delete_file">حذف</button>
+
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                            </tbody>
+                                                        </table>
+
+                                                    </div>
+                                                @endif
                                             </div>
 
                                         </div>
