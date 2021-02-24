@@ -95,6 +95,9 @@ Route::post('Search_patients', 'App\Http\Controllers\Patients_Report@Search_pati
 
 
 
+Route::get('/search',    ['as' => 'patient.search',    'uses' => 'App\Http\Controllers\PatientController@search']);
+
+
 
 Route::get('/{page}', [App\Http\Controllers\AdminController::class, 'index']);
 

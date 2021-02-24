@@ -13,6 +13,16 @@
 							<a class="close-toggle" href="#"><i class="header-icons fe fe-x"></i></a>
 						</div>
 
+						<form method="get" action="{{route('patient.search')}}">
+							<div class="main-header-center mr-3 d-sm-none d-md-none d-lg-block">
+								<input class="form-control" name="keyword" autocomplete="off" placeholder="بحث عن مريض..." type="search">
+								<button class="btn" type="submit"><i class="fas fa-search d-none d-md-block"></i></button>
+							</div>
+						</form>
+
+
+
+
 					</div>
 					<div class="main-header-right">
 

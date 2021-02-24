@@ -23,6 +23,19 @@ class PatientController extends Controller
         return view('patients.patients',compact('patients'));
     }
 
+    public function search(Request $request)
+    {
+
+        $keyword = isset($request->keyword) && $request->keyword != '' ? $request->keyword : null ;
+
+        //dd($request->keyword);
+        $patients = Patient::where('name',$keyword)->OrWhere('address',$keyword)->get();
+
+
+        return view('patients.search_patient',compact('patients'));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
